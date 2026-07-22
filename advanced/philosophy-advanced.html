@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安野正敏師範に学ぶ「生きた身体」の理合と運用｜相模合気道連盟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2438;
+    --ink-soft:#2B3350;
+    --paper:#F7F8F6;
+    --paper-warm:#FBFAF7;
+    --slate:#56637A;
+    --slate-light:#8993A6;
+    --line:#D3D7DC;
+    --ember:#7A2E2E;
+    --ember-soft:#9C4A42;
+    --charcoal:#2B2E33;
+    --serif: 'Shippori Mincho', serif;
+    --sans: 'Zen Kaku Gothic New', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--charcoal);
+    background:var(--paper);
+    line-height:1.9;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{display:block; max-width:100%; height:auto;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  .spine-track{position:relative;}
+  .spine-track::before{
+    content:"";
+    position:absolute; top:0; bottom:0; left:50%;
+    width:1px;
+    background:linear-gradient(to bottom, transparent, var(--line) 6%, var(--line) 94%, transparent);
+    transform:translateX(-50%);
+    z-index:0;
+  }
+  .node{
+    position:absolute; left:50%; top:50%;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--ember);
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 0 6px rgba(122,46,46,0.08);
+    z-index:2;
+  }
+
+  /* Hero */
+  .hero{
+    min-height:80vh;
+    background:var(--ink);
+    color:var(--paper);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:100px 24px 70px;
+  }
+  .hero-eyebrow{ font-size:13px; letter-spacing:.28em; color:var(--slate-light); margin-bottom:28px;}
+  .hero-title{
+    font-family:var(--serif); font-weight:700;
+    font-size:clamp(28px,4.6vw,44px);
+    line-height:1.6; letter-spacing:.04em;
+  }
+  .hero-title .accent{ color:var(--ember-soft); }
+  .hero-sub{ margin-top:28px; font-size:15.5px; color:var(--slate-light); max-width:520px;}
+  .badge-link{
+    display:inline-block; margin-top:40px; padding:10px 24px;
+    border:1px solid rgba(247,248,246,0.35); border-radius:30px;
+    font-size:13px; letter-spacing:.06em; text-decoration:none; color:var(--paper);
+  }
+
+  section{position:relative;}
+  .section-inner{ position:relative; padding:100px 0; }
+  .kicker{ font-size:12.5px; letter-spacing:.24em; color:var(--ember); font-weight:500; margin-bottom:18px;}
+  h2{ font-family:var(--serif); font-weight:700; font-size:clamp(24px,3.2vw,32px); line-height:1.55; margin-bottom:22px; color:var(--ink);}
+  .lead{ font-size:17px; color:var(--ember-soft); font-weight:500; margin-bottom:18px;}
+  p.body-text{ max-width:640px; color:var(--slate); font-size:16px;}
+  .center{ text-align:center; }
+  .center p.body-text{ margin:0 auto; }
+
+  /* principle / calligraphy */
+  .principle .section-inner{ text-align:center; padding-top:110px; }
+  .principle .wrap{ max-width:680px; }
+  .calligraphy-frame{
+    margin:34px auto 30px; max-width:640px;
+    border:1px solid var(--line); background:var(--paper-warm);
+  }
+
+  /* pillar cards */
+  .pillars .section-head{ text-align:center; max-width:600px; margin:0 auto; }
+  .pillar-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:56px;
+  }
+  .pillar-card{
+    background:var(--paper-warm); border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .pillar-card img{ width:100%; height:170px; object-fit:cover; }
+  .pillar-card .txt{ padding:24px 22px 28px; }
+  .pillar-card .kicker{ margin-bottom:10px; }
+  .pillar-card h3{ font-family:var(--serif); font-weight:700; font-size:19px; color:var(--ink); margin-bottom:10px;}
+  .pillar-card p{ font-size:14.5px; color:var(--slate); }
+
+  /* comparison table */
+  .compare table{ width:100%; border-collapse:collapse; margin-top:20px; font-size:14.5px; }
+  .compare th, .compare td{ padding:16px 18px; border-bottom:1px solid var(--line); text-align:left; }
+  .compare thead th{ background:var(--ink); color:var(--paper); font-weight:500; font-size:13.5px; letter-spacing:.04em;}
+  .compare tbody th{ color:var(--ink); font-weight:700; background:var(--paper-warm); width:20%; }
+  .compare td.harmony{ color:var(--ember-soft); font-weight:500; }
+  .compare td.conflict{ color:var(--slate); }
+
+  /* image feature full width */
+  .feature-img{ margin:36px 0; border:1px solid var(--line); }
+
+  /* three grid (moments / rhythms) reused pattern */
+  .trio-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px;
+  }
+  .trio-card{
+    background:var(--paper-warm); border:1px solid var(--line); padding:26px 22px;
+  }
+  .trio-card .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:26px; height:26px; border-radius:50%;
+    background:var(--ember); color:var(--paper); font-size:12px; font-weight:700;
+    margin-bottom:14px;
+  }
+  .trio-card h4{ font-family:var(--serif); font-weight:700; font-size:16.5px; color:var(--ink); margin-bottom:8px;}
+  .trio-card p{ font-size:14px; color:var(--slate); }
+
+  /* flow mechanism */
+  .flow-steps{ display:flex; align-items:center; justify-content:center; gap:14px; margin:44px 0 20px; flex-wrap:wrap;}
+  .flow-step{
+    width:120px; height:120px; border-radius:50%;
+    background:var(--ink); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-weight:700; font-size:20px; text-align:center;
+  }
+  .flow-arrow{ color:var(--ember); font-size:22px; }
+  .flow-caption{ text-align:center; font-size:13.5px; color:var(--slate-light); max-width:150px; }
+  .flow-caption-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:10px;}
+  .flow-caption-row > div{ width:120px; }
+
+  /* dark quote block */
+  .quote-block{
+    background:var(--ink); color:var(--paper);
+    padding:60px 40px; text-align:center; margin:50px 0;
+  }
+  .quote-block p{ font-family:var(--serif); font-size:20px; line-height:1.8; max-width:600px; margin:0 auto;}
+
+  /* CTA */
+  .cta{ position:relative; color:var(--paper); }
+  .cta-bg{
+    position:absolute; inset:0; background-size:cover; background-position:center;
+  }
+  .cta-overlay{
+    position:absolute; inset:0; background:linear-gradient(120deg, rgba(27,36,56,0.92), rgba(27,36,56,0.55));
+  }
+  .cta .section-inner{ position:relative; z-index:2; text-align:center; padding:130px 0; }
+  .cta h2{ color:var(--paper); }
+  .cta p.body-text{ color:rgba(247,248,246,0.85); margin:0 auto 34px; }
+  .cta-links{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    display:inline-block; padding:15px 34px; border:1px solid rgba(247,248,246,0.45);
+    color:var(--paper); text-decoration:none; font-size:14px; letter-spacing:.06em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .btn:hover{ background:var(--paper); color:var(--ink); }
+  .btn.solid{ background:var(--ember-soft); border-color:var(--ember-soft); }
+  .btn.solid:hover{ background:var(--paper); color:var(--ink); }
+
+  footer{ text-align:center; padding:36px 0; font-size:13px; color:var(--slate-light); background:var(--ink); }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.is-visible{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} .reveal{opacity:1; transform:none; transition:none;} }
+
+  @media (max-width:760px){
+    body{ font-size:16px; }
+    .pillar-grid, .trio-grid{ grid-template-columns:1fr; }
+    .compare{ overflow-x:auto; }
+    .spine-track::before, .node{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-eyebrow">相模合気道連盟　安野正敏師範に学ぶ</p>
+  <h1 class="hero-title">力と衝突から<span class="accent">、</span><br>流れと調和へ</h1>
+  <p class="hero-sub">「生きた身体」の理合と運用 — 躰・拍子・機会という三本の柱から、<br>安野師範の合気道を紐解きます。</p>
+  <a class="badge-link" href="../yasuno-teachings-general.html">← まずは基本の「三つの教え」を読む</a>
+</header>
+
+<section class="principle spine-track">
+  <div class="node" style="top:4%"></div>
+  <div class="wrap section-inner reveal">
+    <p class="kicker">ROOT PRINCIPLE</p>
+    <h2>すべての技を支える、身体のOS</h2>
+    <div class="calligraphy-frame">
+      <img src="images/calligraphy-principle.png" alt="足は軽快に、腹は強健に、上半身は柔軟に">
+    </div>
+    <p class="body-text">
+      安野正敏師範が自身のノートから紐解いた、武道の極意。部分の力を抜き、躰全体を連動させる「無駄のない生きた身体運用」の基盤がここにあります。
+      腕力で振り回すのではなく、相手の力の中に入り、導き、即座に投げる — それがこの流派の一貫した思想です。
+    </p>
+  </div>
+</section>
+
+<section class="pillars spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal">
+    <div class="section-head">
+      <p class="kicker">THREE PILLARS OF THE BODY</p>
+      <h2>身体運用の3つの柱</h2>
+      <p class="body-text">「腹は上半身を司る。下半身を活かすために腰がある。」身体の各部が役割を全うした時、圧倒的な力が生まれます。</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <img src="images/upper-body-axis.png" alt="上半身は柔軟に">
+        <div class="txt">
+          <p class="kicker">01 ／ 上半身</p>
+          <h3>淀みない自然体と正中線</h3>
+          <p>肩や膝の力みを完全に抜く。力むと身体は固定化し、居着いてしまう。中心（正中線）は一切ブレず、外縁（肩・腕）だけが圧力に適応する。</p>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <img src="images/hara-center.png" alt="腹は強健に">
+        <div class="txt">
+          <p class="kicker">02 ／ 腹・胎</p>
+          <h3>腕力への依存を捨て、力の中に入る</h3>
+          <p>「部分の力を9、中心力を10にする。」腕力による衝突ではなく、丹田を中心とした中心力で、相手の力の中に流動的に入り込む。</p>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <img src="images/foot-work.png" alt="足は軽快に">
+        <div class="txt">
+          <p class="kicker">03 ／ 足さばき</p>
+          <h3>伸縮自在な「遊び」と武器の理合</h3>
+          <p>完全に伸び切らず、完全に縮まない。剣や杖を持つ意識が、徒手の姿勢と足さばきを決定する。常に次の変化へ移行できるゆとりを保つ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal">
+    <p class="kicker">SELF-DIAGNOSIS</p>
+    <h2>対立から調和へ：身体パラダイムの転換</h2>
+    <p class="body-text">相手を無理やり引っ張り回すのではなく、「誘い（間）」を作り出し、自ら最適な位置へと動くのが合気道の理合です。</p>
+    <table>
+      <thead>
+        <tr><th>診断の次元</th><th>力任せの動き（対立）</th><th>安野師範の理合（調和）</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>力の源泉</th><td class="conflict">腕などの「部分」の力</td><td class="harmony">丹田（腹）と体重移動の「全体」の力</td></tr>
+        <tr><th>接触の瞬間</th><td class="conflict">反発し、相殺する（ブレーキ）</td><td class="harmony">相手の力の中に入り込む（同調）</td></tr>
+        <tr><th>関節の状態</th><td class="conflict">伸び切る、または固まる</td><td class="harmony">伸縮自在な「遊び」を保つ</td></tr>
+        <tr><th>結果</th><td class="conflict">腕力のある者が勝つ</td><td class="harmony">相手の動きを己の技へ変換する</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="moments spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal">
+    <p class="kicker">THE SECOND PILLAR — OPPORTUNITY</p>
+    <h2>許しちゃいけない「3つの機会」</h2>
+    <p class="body-text">相手の攻撃サイクルに潜む絶対的な隙。この3つの瞬間を、間髪入れずに攻め入らなければなりません。</p>
+    <img class="feature-img" src="images/three-moments.png" alt="3つの機会：起こり・変化・尽きたところ">
+    <div class="trio-grid">
+      <div class="trio-card"><span class="num">1</span><h4>起こり（技の出だし）</h4><p>エネルギーが立ち上がる瞬間の、意図の芽生え。</p></div>
+      <div class="trio-card"><span class="num">2</span><h4>変化（構え・技の境界）</h4><p>力のベクトルが切り替わる、不安定な変曲点。</p></div>
+      <div class="trio-card"><span class="num">3</span><h4>尽きたところ（伸び切り）</h4><p>相手のエネルギーが伸び切り、尽き果てた瞬間。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="rhythms spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal">
+    <p class="kicker">THE THIRD PILLAR — RHYTHM</p>
+    <h2>相手を導き崩す「3つの拍子（リズム）」</h2>
+    <p class="body-text">相手と触れたその一瞬一瞬に集中する。入れ子になったら次へと即座に移行する。</p>
+    <img class="feature-img" src="images/three-rhythms.png" alt="3つの拍子：超える・当たる払う・つける">
+    <div class="trio-grid">
+      <div class="trio-card"><span class="num">超</span><h4>超える拍子</h4><p>相手の下から壁を乗り越えるように、心と技を一致させて前へ超えていくリズム。</p></div>
+      <div class="trio-card"><span class="num">当</span><h4>当たる（払う）拍子</h4><p>触れた瞬間の相手の流れを、腹の力で瞬時に払い、捉えるリズム。</p></div>
+      <div class="trio-card"><span class="num">つ</span><h4>つける拍子</h4><p>相手の面、肘、肩などにピタッと吸い付くように密着し、投げる寸前まで崩し切るリズム。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="quote-block">
+  <p>「相手がちょっとでもブレた。そこをすかさず、導き即、投げ。カパを入れずに攻める。」</p>
+</div>
+
+<section class="flow spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal">
+    <p class="kicker">THE MECHANISM</p>
+    <h2>動中静のメカニズム：「導き即投」</h2>
+    <p class="body-text">相手が少しでも動いた・ブレた瞬間を捉え、ぶつからずに腹で受け入れ、間（カパ）を入れずに投げへ至る、一連の連続動作。</p>
+    <div class="flow-steps">
+      <div class="flow-step">動</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">導</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">即投</div>
+    </div>
+    <div class="flow-caption-row">
+      <div class="flow-caption">ブレの感知：相手が少しでも動いた瞬間を捉える。</div>
+      <div class="flow-caption">ベクトルへの同調：ぶつからず、力を腹で受け入れる。</div>
+      <div class="flow-caption">結果の表出：タイムラグなく、体重を活かして投げに至る。</div>
+    </div>
+  </div>
+</section>
+
+<section class="integration spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal center">
+    <p class="kicker">ULTIMATE INTEGRATION</p>
+    <h2>究極の統合：心身と理合の合致</h2>
+    <img class="feature-img" src="images/ultimate-integration.png" alt="体・技・理の統合、中心に気合い">
+    <p class="body-text">身体の理、技の機会、そして剣の理合。これら全てが一致した時に初めて、形に囚われない「気合い（体と心の結び）」が生まれます。
+      作為を捨て、無心でひたすらに触れることに徹することで、相手を包み込むような完全な調和が完成します。</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-bg" style="background-image:url('images/beyond-the-mat.png');"></div>
+  <div class="cta-overlay"></div>
+  <div class="wrap section-inner">
+    <p class="kicker" style="color:rgba(247,248,246,0.7);">BEYOND THE MAT</p>
+    <h2>勝敗を競うのではなく、調和する心地よさを共に育む</h2>
+    <p class="body-text">
+      安野正敏師範の教えは、単なる武道の技法にとどまりません。無駄な力を抜き、ブレない中心を持ち、他者とぶつかることなく調和する。
+      この「生きた身体」の理合は、そのまま日常生活の美しい立ち居振る舞いや、現代を生きる心身の調和へと繋がります。
+    </p>
+    <div class="cta-links">
+      <a class="btn solid" href="#">見学・体験のご案内へ</a>
+      <a class="btn" href="../yasuno-teachings-general.html">基本の「三つの教え」に戻る</a>
+    </div>
+  </div>
+</section>
+
+<footer>相模合気道連盟（Sagami Aiki Dorenmei）</footer>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  items.forEach(i=>io.observe(i));
+</script>
+
+</body>
+</html>
