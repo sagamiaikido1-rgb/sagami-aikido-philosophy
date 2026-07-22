@@ -3,91 +3,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>安野正敏師範に学ぶ「三つのリズム」｜相模合気道連盟</title>
+<title>足は軽快に、肚は強健に、躰は柔軟に｜安野師範の教え</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2438;
+    --ink-soft:#2B3350;
+    --paper:#F7F8F6;
+    --paper-warm:#FBFAF7;
+    --slate:#56637A;
+    --slate-light:#8993A6;
+    --line:#D3D7DC;
+    --ember:#7A2E2E;
+    --ember-soft:#9C4A42;
+    --charcoal:#2B2E33;
+    --serif: 'Shippori Mincho', serif;
+    --sans: 'Zen Kaku Gothic New', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--charcoal);
+    background:var(--paper);
+    line-height:1.9;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- Spine (正中線) ---------- */
+  .spine-track{
+    position:relative;
+  }
+  .spine-track::before{
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:50%;
+    width:1px;
+    background:linear-gradient(to bottom, transparent, var(--line) 6%, var(--line) 94%, transparent);
+    transform:translateX(-50%);
+    z-index:0;
+  }
+  .node{
+    position:absolute;
+    left:50%; top:50%;
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--ember);
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 0 6px rgba(122,46,46,0.08);
+    z-index:2;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    background:var(--ink);
+    color:var(--paper);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    padding:80px 24px 60px;
+  }
+  .hero .spine-track{
+    position:absolute; inset:0;
+  }
+  .hero .spine-track::before{
+    background:linear-gradient(to bottom, transparent, rgba(247,248,246,0.28) 10%, rgba(247,248,246,0.28) 90%, transparent);
+  }
+  .hero-eyebrow{
+    font-size:13px;
+    letter-spacing:.28em;
+    color:var(--slate-light);
+    margin-bottom:36px;
+    z-index:2;
+  }
+  .hero-title{
+    writing-mode:vertical-rl;
+    text-orientation:upright;
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(28px,5.4vw,46px);
+    letter-spacing:.14em;
+    line-height:1.9;
+    z-index:2;
+  }
+  .hero-title .beat{
+    display:inline-block;
+    margin-left:.5em;
+    color:var(--ember-soft);
+  }
+  .hero-sub{
+    margin-top:40px;
+    font-size:15.5px;
+    color:var(--slate-light);
+    text-align:center;
+    max-width:480px;
+    z-index:2;
+  }
+  .hero-sub strong{
+    display:block;
+    color:var(--paper);
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:28px;
+    font-size:12px;
+    letter-spacing:.2em;
+    color:var(--slate-light);
+    z-index:2;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{position:relative;}
+  .section-inner{
+    position:relative;
+    padding:110px 0;
+  }
+  .kicker{
+    font-size:12.5px;
+    letter-spacing:.24em;
+    color:var(--ember);
+    font-weight:500;
+    margin-bottom:18px;
+  }
+  h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(26px,3.4vw,34px);
+    line-height:1.5;
+    margin-bottom:26px;
+    color:var(--ink);
+  }
+  .lead{
+    font-size:18px;
+    color:var(--ember-soft);
+    font-weight:500;
+    margin-bottom:20px;
+  }
+  p.body-text{
+    max-width:560px;
+    color:var(--slate);
+    font-size:16px;
+  }
+
+  /* ---------- Principle (root) ---------- */
+  .principle .section-inner{
+    text-align:center;
+    padding-top:130px;
+  }
+  .principle .wrap{max-width:640px;}
+  .principle h2{margin:0 auto 24px;}
+  .principle p.body-text{margin:0 auto;}
+  .principle .node{top:calc(100% - 10px);}
+
+  /* ---------- Teachings (single consolidated section) ---------- */
+  .teachings .section-inner{padding:90px 0 110px;}
+  .teachings .section-head{
+    text-align:center;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .teach-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:64px;
+    padding-top:38px;
+  }
+  .teach-grid::before{
+    content:"";
+    position:absolute;
+    top:38px; left:16.6%; right:16.6%;
+    height:1px;
+    background:var(--line);
+  }
+  .teach-card{
+    position:relative;
+    padding-top:34px;
+    background:var(--paper-warm);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:34px 26px 30px;
+  }
+  .teach-card::before{
+    content:"";
+    position:absolute;
+    top:-38px; left:50%;
+    width:1px; height:38px;
+    background:var(--line);
+    transform:translateX(-50%);
+  }
+  .teach-card::after{
+    content:"";
+    position:absolute;
+    top:-38px; left:50%;
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--ember);
+    transform:translate(-50%,-50%);
+  }
+  .teach-card .mark{
+    margin-bottom:18px;
+  }
+  .teach-card svg{width:56px;height:56px;}
+  .teach-card h3{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:21px;
+    color:var(--ink);
+    margin-bottom:12px;
+  }
+  .teach-card .lead{font-size:15px; margin-bottom:6px;}
+  .teach-card p.body-text{font-size:14.5px; max-width:none;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .cta .section-inner{
+    text-align:center;
+    padding:120px 0;
+  }
+  .cta h2{color:var(--paper);}
+  .cta p.body-text{color:var(--slate-light); margin:0 auto 36px;}
+  .cta .node{display:none;}
+  .btn{
+    display:inline-block;
+    padding:16px 40px;
+    border:1px solid rgba(247,248,246,0.4);
+    color:var(--paper);
+    text-decoration:none;
+    font-size:14.5px;
+    letter-spacing:.08em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .btn:hover{background:var(--paper); color:var(--ink);}
+
+  footer{
+    text-align:center;
+    padding:36px 0;
+    font-size:13px;
+    color:var(--slate-light);
+    background:var(--ink);
+  }
+
+  /* ---------- Reveal ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  @media (max-width:760px){
+    body{font-size:16px;}
+    .hero-title{font-size:clamp(22px,7vw,32px);}
+    .teach-grid{grid-template-columns:1fr; gap:20px;}
+    .teach-grid::before{display:none;}
+    .teach-card::before,.teach-card::after{display:none;}
+    .teach-card{padding:28px 24px;}
+    .hero .spine-track::before, .principle .spine-track::before, .teachings .spine-track::before{display:none;}
+    .node{display:none;}
+  }
+</style>
 </head>
-<body style="margin:0; padding:0;">
-<header style="background-color: #fcfaf2; color: #4a4a4a; padding: 60px 20px 30px; text-align: center; border-bottom: 1px solid #e6dfd3;">
-    <img src="hero-ensou.png" alt="円相" style="width: 180px; max-width: 40%; height: auto; margin-bottom: 10px; opacity: 0.9;">
-    <h1 style="font-size: 30px; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; font-weight: 600; color: #2e2e2e; margin: 0;">
-        しなやかな心身をつくる「三つのリズム」
-    </h1>
-    <div style="width: 50px; height: 2px; background-color: #c8b99c; margin: 15px auto;"></div>
-    <p style="font-size: 17px; color: #6e6e6e; margin: 0; line-height: 1.6;">
-        安野正敏師範の教えに学ぶ、力みに頼らない美しい躰（からだ）の操作
-    </p>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="spine-track"><div class="node" style="top:8%"></div><div class="node" style="top:92%"></div></div>
+  <p class="hero-eyebrow">相模合気道連盟　安野正敏師範の教え</p>
+  <h1 class="hero-title">足は軽快に<span class="beat">、</span>肚は強健に<span class="beat">、</span>躰は柔軟に</h1>
+  <p class="hero-sub">
+    <strong>力でねじ伏せるのではなく、しなやかに整える。</strong>
+    ひとつの軸から、三つの教えが生まれています。
+  </p>
+  <p class="scroll-cue">SCROLL</p>
 </header>
 
-<main style="max-width: 950px; margin: 40px auto; padding: 0 20px; font-family: sans-serif; color: #4a4a4a;">
+<!-- ================= 根本原理 ================= -->
+<section class="principle spine-track">
+  <div class="node" style="top:6%"></div>
+  <div class="wrap section-inner reveal">
+    <p class="kicker">ROOT PRINCIPLE</p>
+    <h2>すべての基本にある、ひとつの軸</h2>
+    <p class="body-text">
+      安野正敏師範が自身の稽古ノートに記した言葉、それが「足は軽快に、肚は強健に、躰は柔軟に」です。
+      これは技のひとつひとつを支える、いわば身体の土台。三つの教えは別々のものではなく、
+      この一本の軸から自然に枝分かれしています。
+    </p>
+  </div>
+</section>
 
-    <section style="margin-bottom: 40px; border: 1px dashed #c8b99c; padding: 25px; border-radius: 4px; background-color: #fff;">
-        <p style="font-size: 15px; color: #8e7f65; margin: 0; font-weight: bold; letter-spacing: 0.05em;">【メインビジュアル指示】</p>
-        <p style="font-size: 16px; color: #555; margin: 8px 0 0 0; line-height: 1.6;">
-            明るく清潔感のある木床の道場で、力みを抜いてのびのびと両手を広げて転換している門下生の写真を掲載。お互いが笑顔で、しかし軸の通った美しい姿勢で稽古をしている様子を切り取る。「激しさ」よりも「心地よさや調和」が前面に伝わるビジュアルにする。
+<!-- ================= 3つの学び(統合セクション) ================= -->
+<section class="teachings spine-track">
+  <div class="node" style="top:2%"></div>
+  <div class="wrap section-inner reveal">
+    <div class="section-head">
+      <p class="kicker">THREE DERIVATIVES</p>
+      <h2>ひとつの軸から、三つの学びへ</h2>
+      <p class="body-text" style="margin:0 auto;">根本原理が、足・肚・躰という三つのかたちに枝分かれしています。</p>
+    </div>
+
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="mark">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="46" stroke="#D3D7DC" stroke-width="1"/>
+            <path d="M30 76 C 45 40, 75 40, 90 76" stroke="#7A2E2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="30" cy="76" r="3.5" fill="#7A2E2E"/>
+            <circle cx="90" cy="76" r="3.5" fill="#7A2E2E"/>
+          </svg>
+        </div>
+        <p class="kicker">派生 01 ／ 足</p>
+        <p class="lead">伸びきらず、縮みきらず。</p>
+        <h3>足は軽快に</h3>
+        <p class="body-text">
+          完全に伸ばしきると、次の動きに移れません。かといって縮こまっても機敏には動けない。
+          常にどちらへも動ける「遊び」を足に残しておくこと。このゆとりが、間合いに淀みなく応じる軽やかさを生みます。
         </p>
-    </section>
+      </div>
 
-    <h2 style="font-size: 22px; color: #2e2e2e; font-weight: bold; text-align: center; margin-bottom: 30px;">
-        日常生活にも活きる、躰を操る「3つの教え」
-    </h2>
-
-    <div style="text-align: center; margin-bottom: 25px;">
-        <img src="three-elements.png" alt="身体の三層構造（上半身＝柔軟に／腹・腰＝強健に／下半身＝軽快に）" style="max-width: 100%; width: 700px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(200,185,156,0.2);">
-    </div>
-
-    <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px; text-align: left; line-height: 1.6; font-size: 16px; background-color: #fff; box-shadow: 0 4px 12px rgba(200,185,156,0.15);">
-        <thead>
-            <tr style="background-color: #c8b99c; color: #fff;">
-                <th style="padding: 15px; font-weight: bold; width: 25%;">重視する要素</th>
-                <th style="padding: 15px; font-weight: bold; width: 45%;">稽古における実践とアプローチ</th>
-                <th style="padding: 15px; font-weight: bold; width: 30%;">安野師範の言葉とのつながり</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="border-bottom: 1px solid #ede8df;">
-                <td style="padding: 16px; font-weight: bold; color: #2e2e2e; background-color: #fdfcf9;">上半身の柔軟性</td>
-                <td style="padding: 16px; color: #555;">肩の力を抜き、いつでも前後左右に動ける柔軟な構えと、ブレない中心（正中線）を身につけます。</td>
-                <td style="padding: 16px; font-weight: bold; color: #8e7f65;">「上半身は柔軟に」<br><span style="font-size: 14px; color: #777; font-weight: normal;">無駄な力を抜き、状況に応じて柔軟に変化する。</span></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #ede8df;">
-                <td style="padding: 16px; font-weight: bold; color: #2e2e2e; background-color: #fdfcf9;">胎（はら）の意識</td>
-                <td style="padding: 16px; color: #555;">腕力ではなく、下腹部（丹田）を中心とした一体感のある躰の操作と、体重を乗せる中心力を学びます。</td>
-                <td style="padding: 16px; font-weight: bold; color: #8e7f65;">「腹は強健に」<br><span style="font-size: 14px; color: #777; font-weight: normal;">重心を低く保ち、身体の芯（腹）から技を展開する。</span></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #ede8df;">
-                <td style="padding: 16px; font-weight: bold; color: #2e2e2e; background-color: #fdfcf9;">軽快な足さばき</td>
-                <td style="padding: 16px; color: #555;">剣や杖の理合を体術に活かし、完全に伸び切らず、伸縮自在な「遊び」のある軽快なステップを徹底します。</td>
-                <td style="padding: 16px; font-weight: bold; color: #8e7f65;">「足は軽快に」<br><span style="font-size: 14px; color: #777; font-weight: normal;">のびのびと大地を捉え、淀みなく相手の懐へ入り身する。</span></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2 style="font-size: 22px; color: #2e2e2e; font-weight: bold; text-align: center; margin-bottom: 25px; margin-top: 50px;">
-        技の機会を捉える「3つの拍子（リズム）」
-    </h2>
-
-    <div style="text-align: center; margin-bottom: 25px;">
-        <img src="three-rhythms.png" alt="3つの拍子（超える拍子／当てる・払う拍子／つける拍子）" style="max-width: 100%; width: 700px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(200,185,156,0.2);">
-    </div>
-
-    <div style="border-top: 1px solid #e6dfd3; border-bottom: 1px solid #e6dfd3; padding: 20px 0; margin-bottom: 40px; font-size: 17px; line-height: 1.8;">
-        <div style="margin-bottom: 15px;">
-            <span style="background-color: #8e7f65; color: #fff; padding: 2px 8px; font-size: 14px; font-weight: bold; border-radius: 3px; margin-right: 10px; vertical-align: middle;">1</span>
-            <strong>超える拍子</strong> ：相手の下から壁を乗り越えるように、心と技を一致させて超えていくリズム。
+      <div class="teach-card">
+        <div class="mark">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="46" stroke="#D3D7DC" stroke-width="1"/>
+            <circle cx="60" cy="60" r="16" fill="#7A2E2E" opacity="0.85"/>
+            <circle cx="60" cy="60" r="26" stroke="#9C4A42" stroke-width="1" opacity="0.5"/>
+          </svg>
         </div>
-        <div style="margin-bottom: 15px;">
-            <span style="background-color: #8e7f65; color: #fff; padding: 2px 8px; font-size: 14px; font-weight: bold; border-radius: 3px; margin-right: 10px; vertical-align: middle;">2</span>
-            <strong>当たる（払う）拍子</strong> ：触れた瞬間の身体の流れを、腹の力で瞬時に払い・捉えるリズム。
-        </div>
-        <div>
-            <span style="background-color: #8e7f65; color: #fff; padding: 2px 8px; font-size: 14px; font-weight: bold; border-radius: 3px; margin-right: 10px; vertical-align: middle;">3</span>
-            <strong>つける拍子</strong> ：相手の面、肘、手首などにピタッと吸い付くように密着し、投げる寸前まで崩しを活かすリズム。
-        </div>
-    </div>
+        <p class="kicker">派生 02 ／ 肚</p>
+        <p class="lead">腕の力に頼らない。</p>
+        <h3>肚は強健に</h3>
+        <p class="body-text">
+          力任せに腕で押し返すと、相手の力とぶつかり合うだけです。力の源は腕ではなく肚(丹田)。
+          下腹に体重を乗せ、そこを中心に技を展開することで、崩れない強さが生まれます。
+        </p>
+      </div>
 
-    <div style="background-color: #fcfaf2; border: 1px solid #e6dfd3; padding: 25px; text-align: center; border-radius: 4px; font-size: 16px; line-height: 1.7; color: #555;">
-        <span style="font-weight: bold; color: #2e2e2e; font-size: 17px; display: block; margin-bottom: 10px;">◆ 道場が大切にする心得 ◆</span>
-        <img src="three-moments.png" alt="許してはいけない3つの瞬間（技の起こり／技の変わり目／技の尽きたところ）" style="max-width: 100%; width: 700px; height: auto; border-radius: 4px; margin: 10px auto 20px; display: block; box-shadow: 0 4px 12px rgba(200,185,156,0.2);">
-        相手の「起こり（技の出だし）」、構えや技の「変化する境界」、そして相手の力が「尽きたところ（伸び切った瞬間）」。<br>この3つの機会を逃さず（許さず）、力を入れずに導き、即座に技へと繋げます。
+      <div class="teach-card">
+        <div class="mark">
+          <svg viewBox="0 0 120 120" fill="none">
+            <line x1="60" y1="14" x2="60" y2="106" stroke="#7A2E2E" stroke-width="1.5"/>
+            <path d="M28 34 C 45 46, 45 62, 28 74" stroke="#D3D7DC" stroke-width="1.5" fill="none"/>
+            <path d="M92 34 C 75 46, 75 62, 92 74" stroke="#D3D7DC" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <p class="kicker">派生 03 ／ 躰</p>
+        <p class="lead">力まず、崩れない。</p>
+        <h3>躰は柔軟に</h3>
+        <p class="body-text">
+          肩や膝の力みを手放し、身体の軸(正中線)だけはぶらさない。まわりは水のようにやわらかく、
+          中心だけは静かに定まっている。それが、自在に変化できる「自然体」です。
+        </p>
+      </div>
     </div>
-</main>
-</body></html>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="wrap section-inner reveal">
+    <p class="kicker" style="color:var(--slate-light);">VISIT US</p>
+    <h2>実際の稽古を見てみませんか</h2>
+    <p class="body-text">
+      言葉で読むよりも、実際に稽古の場で体感していただくのが一番です。見学・体験はいつでも歓迎しています。
+    </p>
+    <a class="btn" href="#">見学・体験のご案内へ</a>
+    <a class="btn" href="advanced/philosophy-advanced.html" style="margin-left:14px;">さらに学ぶ：躰・拍子・機会の理合へ →</a>
+  </div>
+</section>
+
+<footer>相模合気道連盟</footer>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  items.forEach(i=>io.observe(i));
+</script>
+
+</body>
+</html>
