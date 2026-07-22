@@ -159,10 +159,16 @@
   /* CTA */
   .cta{ position:relative; color:var(--paper); }
   .cta-bg{
-    position:absolute; inset:0; background-size:cover; background-position:center;
+    position:absolute; inset:0;
+    background-color:var(--ink);
+    background-image:url('images/beyond-the-mat-clean.png');
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:auto 100%;
   }
   .cta-overlay{
-    position:absolute; inset:0; background:linear-gradient(120deg, rgba(27,36,56,0.92), rgba(27,36,56,0.55));
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(27,36,56,0.97) 40%, rgba(27,36,56,0.55) 75%, rgba(27,36,56,0.25) 100%);
   }
   .cta .section-inner{ position:relative; z-index:2; text-align:center; padding:130px 0; }
   .cta h2{ color:var(--paper); }
